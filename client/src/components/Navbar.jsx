@@ -178,19 +178,20 @@ const Navbar = () => {
 
   const navLinkClass = ({ isActive }) =>
     isActive
-      ? 'text-yellow-400 font-semibold border-b-2 border-yellow-400 pb-1'
-      : 'hover:text-yellow-400 transition';
+      ? 'text-yellow-400 font-semibold border-b-2 border-yellow-400 pb-1 block'
+      : 'hover:text-yellow-400 transition block';
+
+  const closeMenu = () => setOpen(false);
 
   return (
     <header className="bg-[#0a0a36] text-white shadow-md w-full">
       <div className="max-w-screen-xl mx-auto px-4 py-3 flex justify-between items-center">
-        {/* Logo */}
         <div className="flex items-center space-x-2 text-xl font-bold">
-          <img src="/assets/logo.png" alt="logo" className="h-6 w-6" />
+          <img src="/assets/GFX_logo.jpg" alt="logo" className="h-9 w-7" />
           <span>Millennial GFX</span>
         </div>
 
-        {/* Desktop Nav */}
+        {/* Desktop nav */}
         <nav className="hidden md:flex space-x-6 text-sm font-semibold">
           <NavLink to="/" end className={navLinkClass}>Home</NavLink>
           <NavLink to="/about" className={navLinkClass}>About</NavLink>
@@ -199,39 +200,32 @@ const Navbar = () => {
           <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
         </nav>
 
-        {/* Mobile Menu Button */}
-        <button className="md:hidden focus:outline-none" onClick={() => setOpen(!open)}>
+        {/* Hamburger menu button */}
+        <button
+          className="md:hidden focus:outline-none"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle Menu"
+        >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2"
-            viewBox="0 0 24 24">
+               viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round"
-              d="M4 6h16M4 12h16M4 18h16" />
+                  d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </div>
 
-      {/* Mobile Dropdown Nav */}
+      {/* Mobile dropdown menu */}
       {open && (
-        <nav className="md:hidden bg-[#0a0a36] px-4 py-4 space-y-3 text-sm font-semibold border-t border-[#222248]">
-          <NavLink to="/" end onClick={() => setOpen(false)} className={navLinkClass}>
-            Home
-          </NavLink>
-          <NavLink to="/about" onClick={() => setOpen(false)} className={navLinkClass}>
-            About
-          </NavLink>
-          <NavLink to="/services" onClick={() => setOpen(false)} className={navLinkClass}>
-            Services
-          </NavLink>
-          <NavLink to="/portfolio" onClick={() => setOpen(false)} className={navLinkClass}>
-            Portfolio
-          </NavLink>
-          <NavLink to="/contact" onClick={() => setOpen(false)} className={navLinkClass}>
-            Contact
-          </NavLink>
-        </nav>
+        <div className="md:hidden px-4 pb-4 flex flex-col space-y-2 text-sm font-semibold">
+          <NavLink to="/" end className={navLinkClass} onClick={closeMenu}>Home</NavLink>
+          <NavLink to="/about" className={navLinkClass} onClick={closeMenu}>About</NavLink>
+          <NavLink to="/services" className={navLinkClass} onClick={closeMenu}>Services</NavLink>
+          <NavLink to="/portfolio" className={navLinkClass} onClick={closeMenu}>Portfolio</NavLink>
+          <NavLink to="/contact" className={navLinkClass} onClick={closeMenu}>Contact</NavLink>
+        </div>
       )}
     </header>
   );
 };
 
 export default Navbar;
-
