@@ -45,59 +45,159 @@
 // export default Services;
 
 
+// import React from 'react';
+
+// const Services = () => (
+//   <main>
+//     <div className="container">
+//       <h1 style={{ fontSize: '2.2rem', marginBottom: '10px' }}>What We Do Best</h1>
+//       <p style={{ color: '#ccc', fontSize: '1.05rem' }}>
+//         From strategy to execution, <strong>Millennial GFX</strong> delivers high-impact solutions that power your business growth.
+//       </p>
+//       <p style={{ color: '#ccc', fontSize: '1.05rem' }}>
+//         At <strong>Millennial GFX</strong>, we bring your vision to life with powerful digital tools. 
+//         From MVPs to enterprise-scale solutions, we engineer custom systems that move businesses forward.At Millennial GFX, we partner with bold brands and visionary startups to build powerful digital experiences. 
+//         Whether you're launching something new or reinventing something old, our job is to make your vision real—intelligently, beautifully, and fast.
+//       </p>
+
+//       <hr style={{ border: 'none', borderTop: '1px solid #444', margin: '30px 0' }} />
+
+//       <div style={{
+//         display: 'grid',
+//         gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+//         gap: '30px',
+//         marginBottom: '50px'
+//       }}>
+//         {services.map((service, i) => (
+//           <div key={i} style={cardStyle}>
+//             <div style={{ fontSize: '2rem' }}>{service.icon}</div>
+//             <h3 style={{ color: '#ffd700', margin: '15px 0 10px' }}>{service.title}</h3>
+//             <p style={{ color: '#ccc' }}>{service.description}</p>
+//           </div>
+//         ))}
+//       </div>
+
+//       <h2 style={{ fontSize: '1.5rem', marginBottom: '12px' }}>Need a Custom Solution?</h2>
+//       <p style={{ marginBottom: '20px', color: '#ccc' }}>
+//         Whether you're launching a product or revamping your digital strategy, we tailor every solution to fit your needs.
+//       </p>
+//       <p style={{ marginBottom: '20px', color: '#ccc' }}>
+//          Let’s create solutions that don’t just work—they make a difference. Start your journey with <strong>Millennial GFX</strong> today.
+//       </p>
+//       <a
+//         href="/contact"
+//         style={{
+//           display: 'inline-block',
+//           backgroundColor: '#ffd700',
+//           color: '#0a0a36',
+//           padding: '12px 20px',
+//           borderRadius: '6px',
+//           fontWeight: 'bold',
+//           textDecoration: 'none'
+//         }}
+//       >
+//         Let’s Build Together
+//       </a>
+//     </div>
+//   </main>
+// );
+
+// const services = [
+//   {
+//     icon: '💻',
+//     title: 'Custom Web Development',
+//     description: 'Robust, scalable websites & web apps tailored for performance and growth.',
+//   },
+//   {
+//     icon: '📱',
+//     title: 'Mobile App Development',
+//     description: 'iOS and Android apps built for experience, functionality, and scale.',
+//   },
+//   {
+//     icon: '🎨',
+//     title: 'UI/UX & Branding',
+//     description: 'Designs that reflect your identity and create user delight across platforms.',
+//   },
+//   {
+//     icon: '☁️',
+//     title: 'Cloud & DevOps',
+//     description: 'Modern infrastructure, CI/CD pipelines, and cloud-native scalability.',
+//   },
+//   {
+//     icon: '🧠',
+//     title: 'AI & Automation',
+//     description: 'Integrate intelligence into your business with custom AI workflows.',
+//   },
+//   {
+//     icon: '📈',
+//     title: 'Digital Strategy',
+//     description: 'Marketing, SEO & analytics to elevate your reach and engagement.',
+//   }
+// ];
+
+// const cardStyle = {
+//   backgroundColor: '#111141',
+//   borderRadius: '12px',
+//   padding: '20px',
+//   boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
+//   transition: 'transform 0.3s ease',
+// };
+
+// export default Services;
+
+
+
+
+
+
+
 import React from 'react';
 
 const Services = () => (
-  <main>
-    <div className="container">
-      <h1 style={{ fontSize: '2.2rem', marginBottom: '10px' }}>What We Do Best</h1>
-      <p style={{ color: '#ccc', fontSize: '1.05rem' }}>
+  <main className="bg-[#0a0a36] text-white px-4 py-12 min-h-screen">
+    <div className="max-w-screen-xl mx-auto space-y-6">
+      <h1 className="text-3xl sm:text-4xl font-bold">What We Do Best</h1>
+
+      <p className="text-gray-300 text-base">
         From strategy to execution, <strong>Millennial GFX</strong> delivers high-impact solutions that power your business growth.
       </p>
-      <p style={{ color: '#ccc', fontSize: '1.05rem' }}>
-        At <strong>Millennial GFX</strong>, we bring your vision to life with powerful digital tools. 
-        From MVPs to enterprise-scale solutions, we engineer custom systems that move businesses forward.At Millennial GFX, we partner with bold brands and visionary startups to build powerful digital experiences. 
-        Whether you're launching something new or reinventing something old, our job is to make your vision real—intelligently, beautifully, and fast.
+
+      <p className="text-gray-300 text-base">
+        At <strong>Millennial GFX</strong>, we bring your vision to life with powerful digital tools. From MVPs to enterprise-scale solutions, we engineer custom systems that move businesses forward. Whether you're launching something new or reinventing something old, our job is to make your vision real—intelligently, beautifully, and fast.
       </p>
 
-      <hr style={{ border: 'none', borderTop: '1px solid #444', margin: '30px 0' }} />
+      <hr className="border-t border-[#444] my-8" />
 
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-        gap: '30px',
-        marginBottom: '50px'
-      }}>
+      {/* Service Cards */}
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map((service, i) => (
-          <div key={i} style={cardStyle}>
-            <div style={{ fontSize: '2rem' }}>{service.icon}</div>
-            <h3 style={{ color: '#ffd700', margin: '15px 0 10px' }}>{service.title}</h3>
-            <p style={{ color: '#ccc' }}>{service.description}</p>
+          <div
+            key={i}
+            className="bg-[#111141] p-6 rounded-xl shadow-lg transform hover:scale-[1.02] transition-transform duration-300"
+          >
+            <div className="text-3xl mb-3">{service.icon}</div>
+            <h3 className="text-yellow-400 font-semibold text-lg mb-2">{service.title}</h3>
+            <p className="text-gray-300">{service.description}</p>
           </div>
         ))}
       </div>
 
-      <h2 style={{ fontSize: '1.5rem', marginBottom: '12px' }}>Need a Custom Solution?</h2>
-      <p style={{ marginBottom: '20px', color: '#ccc' }}>
-        Whether you're launching a product or revamping your digital strategy, we tailor every solution to fit your needs.
-      </p>
-      <p style={{ marginBottom: '20px', color: '#ccc' }}>
-         Let’s create solutions that don’t just work—they make a difference. Start your journey with <strong>Millennial GFX</strong> today.
-      </p>
-      <a
-        href="/contact"
-        style={{
-          display: 'inline-block',
-          backgroundColor: '#ffd700',
-          color: '#0a0a36',
-          padding: '12px 20px',
-          borderRadius: '6px',
-          fontWeight: 'bold',
-          textDecoration: 'none'
-        }}
-      >
-        Let’s Build Together
-      </a>
+      {/* Custom Solution CTA */}
+      <div className="pt-10 space-y-4">
+        <h2 className="text-2xl font-bold">Need a Custom Solution?</h2>
+        <p className="text-gray-300">
+          Whether you're launching a product or revamping your digital strategy, we tailor every solution to fit your needs.
+        </p>
+        <p className="text-gray-300">
+          Let’s create solutions that don’t just work—they make a difference. Start your journey with <strong>Millennial GFX</strong> today.
+        </p>
+        <a
+          href="/contact"
+          className="inline-block bg-yellow-400 text-[#0a0a36] px-6 py-3 rounded font-bold hover:bg-yellow-300 transition"
+        >
+          Let’s Build Together
+        </a>
+      </div>
     </div>
   </main>
 );
@@ -134,14 +234,6 @@ const services = [
     description: 'Marketing, SEO & analytics to elevate your reach and engagement.',
   }
 ];
-
-const cardStyle = {
-  backgroundColor: '#111141',
-  borderRadius: '12px',
-  padding: '20px',
-  boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
-  transition: 'transform 0.3s ease',
-};
 
 export default Services;
 
