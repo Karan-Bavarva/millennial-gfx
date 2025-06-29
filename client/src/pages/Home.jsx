@@ -114,11 +114,55 @@
 
 
 
+// import React from 'react';
+
+// const Home = () => {
+//   return (
+//     <div className="min-h-screen w-full bg-gradient-to-br from-[#0a0a36] to-[#111141] text-white">
+//       <div className="max-w-screen-xl mx-auto px-4 py-16 flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
+        
+//         {/* Text Content */}
+//         <div className="flex-1 text-center lg:text-left">
+//           <h1 className="text-3xl sm:text-5xl font-bold mb-6 leading-tight">
+//             Transforming Ideas<br /> into Digital Reality
+//           </h1>
+//           <p className="text-yellow-400 text-lg mb-3">
+//             Custom Software Development Across Multiple Technologies
+//           </p>
+//           <p className="text-gray-300 text-base mb-6 max-w-lg mx-auto lg:mx-0">
+//             At <strong>Millennial GFX</strong>, we craft future-ready solutions with smart tech, clean design, and a deep understanding of your business needs.
+//           </p>
+//           <a
+//             href="/services"
+//             className="inline-block bg-yellow-400 text-[#0a0a36] font-bold px-6 py-3 rounded hover:bg-yellow-300 transition"
+//           >
+//             Explore Our Services
+//           </a>
+//         </div>
+
+//         {/* Image */}
+//         <div className="flex-1 text-center">
+//           <img
+//             src="/assets/innovation.jpg"
+//             alt="Innovation"
+//             className="w-full max-w-md mx-auto rounded-xl shadow-lg"
+//           />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Home;
+
+
+
+
 import React from 'react';
 
 const Home = () => {
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-[#0a0a36] to-[#111141] text-white">
+    <main className="min-h-screen w-full bg-gradient-to-br from-[#0a0a36] to-[#111141] text-white">
       <div className="max-w-screen-xl mx-auto px-4 py-16 flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
         
         {/* Text Content */}
@@ -149,7 +193,7 @@ const Home = () => {
           />
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 
@@ -160,3 +204,98 @@ export default Home;
 
 
 
+
+
+
+
+
+
+
+
+// import React from 'react';
+
+// const Home = () => {
+//   return (
+//     <div className="w-full bg-gradient-to-br from-[#0a0a36] to-[#111141] text-white">
+//       <div className="max-w-screen-xl mx-auto px-4 py-16 flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
+
+//         {/* Text Section */}
+//         <div className="flex-1 text-center lg:text-left">
+//           <h1 className="text-3xl sm:text-5xl font-bold mb-6 leading-tight">
+//             Transforming Ideas<br /> into Digital Reality
+//           </h1>
+//           <p className="text-yellow-400 text-lg mb-3">
+//             Custom Software Development Across Multiple Technologies
+//           </p>
+//           <p className="text-gray-300 text-base mb-6 max-w-lg mx-auto lg:mx-0">
+//             At <strong>Millennial GFX</strong>, we craft future-ready solutions with smart tech, clean design, and a deep understanding of your business needs.
+//           </p>
+//           <a
+//             href="/services"
+//             className="inline-block bg-yellow-400 text-[#0a0a36] font-bold px-6 py-3 rounded hover:bg-yellow-300 transition"
+//           >
+//             Explore Our Services
+//           </a>
+//         </div>
+
+//         {/* Image Section */}
+//         <div className="flex-1 text-center">
+//           <img
+//             src="/assets/innovation.jpg"
+//             alt="Innovation"
+//             className="w-full max-w-md mx-auto rounded-xl shadow-lg"
+//           />
+//         </div>
+
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Home;
+
+
+
+
+
+
+
+// import React from 'react';
+
+// const Home = () => {
+//   return (
+//     <div className="w-full bg-gradient-to-br from-[#0a0a36] to-[#111141] text-white">
+//       <div className="max-w-screen-xl mx-auto px-4 py-16 flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
+//         {/* Text Content */}
+//         <div className="flex-1 text-center lg:text-left">
+//           <h1 className="text-3xl sm:text-5xl font-bold mb-6 leading-tight">
+//             Transforming Ideas<br /> into Digital Reality
+//           </h1>
+//           <p className="text-yellow-400 text-lg mb-3">
+//             Custom Software Development Across Multiple Technologies
+//           </p>
+//           <p className="text-gray-300 text-base mb-6 max-w-lg mx-auto lg:mx-0">
+//             At <strong>Millennial GFX</strong>, we craft future-ready solutions with smart tech, clean design, and a deep understanding of your business needs.
+//           </p>
+//           <a
+//             href="/services"
+//             className="inline-block bg-yellow-400 text-[#0a0a36] font-bold px-6 py-3 rounded hover:bg-yellow-300 transition"
+//           >
+//             Explore Our Services
+//           </a>
+//         </div>
+
+//         {/* Image */}
+//         <div className="flex-1 text-center">
+//           <img
+//             src="/assets/innovation.jpg"
+//             alt="Innovation"
+//             className="w-full max-w-md mx-auto rounded-xl shadow-lg"
+//           />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Home;
