@@ -170,11 +170,83 @@
 /* Final Nevbar With Mobile responsive */
 
 
+// import React, { useState } from 'react';
+// import { NavLink } from 'react-router-dom';
+
+// const Navbar = () => {
+//   const [open, setOpen] = useState(false);
+
+//   const navLinkClass = ({ isActive }) =>
+//     isActive
+//       ? 'text-yellow-400 font-semibold border-b-2 border-yellow-400 pb-1 block'
+//       : 'hover:text-yellow-400 transition block';
+
+//   const closeMenu = () => setOpen(false);
+
+//   return (
+//     <header className="bg-[#0a0a36] text-white shadow-md w-full">
+//       <div className="max-w-screen-xl mx-auto px-4 py-3 flex justify-between items-center">
+//         <div className="flex items-center space-x-2 text-xl font-bold">
+//           <img src="/assets/GFX_logo.jpg" alt="logo" className="h-9 w-7" />
+//           <span>Millennial GFX</span>
+//         </div>
+
+//         {/* Desktop nav */}
+//         <nav className="hidden md:flex space-x-6 text-sm font-semibold">
+//           <NavLink to="/" end className={navLinkClass}>Home</NavLink>
+//           <NavLink to="/about" className={navLinkClass}>About</NavLink>
+//           <NavLink to="/services" className={navLinkClass}>Services</NavLink>
+//           <NavLink to="/portfolio" className={navLinkClass}>Portfolio</NavLink>
+//           <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
+//         </nav>
+
+//         {/* Hamburger menu button */}
+//         <button
+//           className="md:hidden focus:outline-none"
+//           onClick={() => setOpen(!open)}
+//           aria-label="Toggle Menu"
+//         >
+//           <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2"
+//                viewBox="0 0 24 24">
+//             <path strokeLinecap="round" strokeLinejoin="round"
+//                   d="M4 6h16M4 12h16M4 18h16" />
+//           </svg>
+//         </button>
+//       </div>
+
+//       {/* Mobile dropdown menu */}
+//       {open && (
+//         <div className="md:hidden px-4 pb-4 flex flex-col space-y-2 text-sm font-semibold">
+//           <NavLink to="/" end className={navLinkClass} onClick={closeMenu}>Home</NavLink>
+//           <NavLink to="/about" className={navLinkClass} onClick={closeMenu}>About</NavLink>
+//           <NavLink to="/services" className={navLinkClass} onClick={closeMenu}>Services</NavLink>
+//           <NavLink to="/portfolio" className={navLinkClass} onClick={closeMenu}>Portfolio</NavLink>
+//           <NavLink to="/contact" className={navLinkClass} onClick={closeMenu}>Contact</NavLink>
+//         </div>
+//       )}
+//     </header>
+//   );
+// };
+
+// export default Navbar;
+
+
+
+
+
+
+
+
+
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isAdmin = localStorage.getItem('isAdmin') === 'true' || location.pathname.startsWith('/admin');
+  const isLoginPage = location.pathname === '/admin/login';
 
   const navLinkClass = ({ isActive }) =>
     isActive
@@ -182,6 +254,11 @@ const Navbar = () => {
       : 'hover:text-yellow-400 transition block';
 
   const closeMenu = () => setOpen(false);
+
+  const handleLogout = () => {
+    localStorage.removeItem('isAdmin');
+    navigate('/');
+  };
 
   return (
     <header className="bg-[#0a0a36] text-white shadow-md w-full">
@@ -191,31 +268,39 @@ const Navbar = () => {
           <span>Millennial GFX</span>
         </div>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex space-x-6 text-sm font-semibold">
-          <NavLink to="/" end className={navLinkClass}>Home</NavLink>
-          <NavLink to="/about" className={navLinkClass}>About</NavLink>
-          <NavLink to="/services" className={navLinkClass}>Services</NavLink>
-          <NavLink to="/portfolio" className={navLinkClass}>Portfolio</NavLink>
-          <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
-        </nav>
-
-        {/* Hamburger menu button */}
-        <button
-          className="md:hidden focus:outline-none"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle Menu"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2"
-               viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round"
-                  d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+        {/* if not admin OR if on login page -> show normal links */}
+        {!isAdmin || isLoginPage ? (
+          <>
+            <nav className="hidden md:flex space-x-6 text-sm font-semibold">
+              <NavLink to="/" end className={navLinkClass}>Home</NavLink>
+              <NavLink to="/about" className={navLinkClass}>About</NavLink>
+              <NavLink to="/services" className={navLinkClass}>Services</NavLink>
+              <NavLink to="/portfolio" className={navLinkClass}>Portfolio</NavLink>
+              <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
+            </nav>
+            <button
+              className="md:hidden focus:outline-none"
+              onClick={() => setOpen(!open)}
+              aria-label="Toggle Menu"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2"
+                  viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </>
+        ) : (
+          <button 
+            onClick={handleLogout}
+            className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded font-bold"
+          >
+            Logout
+          </button>
+        )}
       </div>
 
-      {/* Mobile dropdown menu */}
-      {open && (
+      {!isAdmin && open && (
         <div className="md:hidden px-4 pb-4 flex flex-col space-y-2 text-sm font-semibold">
           <NavLink to="/" end className={navLinkClass} onClick={closeMenu}>Home</NavLink>
           <NavLink to="/about" className={navLinkClass} onClick={closeMenu}>About</NavLink>
